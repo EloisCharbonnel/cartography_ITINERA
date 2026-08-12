@@ -37,19 +37,41 @@
 
         <style>
         #map {
-            width: 1229px;
-            height: 778px;
+            width: 100%;
+            height: calc(100vh - 120px); /* Prend toute la hauteur moins l'espace du titre */
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Évite les barres de défilement horizontales */
+        }
+        /* Ajustement pour l'en-tête */
+        .header-container {
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            box-sizing: border-box;
         }
         </style>
         <title></title>
     </head>
-    <body>
-            <div style="text-align: center; padding: 20px; font-family: 'Liberation Sans', sans-serif; background-color: #f4f4f4; border-bottom: 2px solid #ddd;">
-    <h1 style="color: #333; margin-bottom: 10px;">Carte des Sites Mégalithiques</h1>
-    <p style="color: #666; max-width: 800px; margin: 0 auto; font-size: 1.1em;">
-        Bienvenue sur la carte interactive des sites recensé le long du Blaison. 
-    </p>
-</div>
+  <body>
+        <!-- Titre et texte -->
+        <div class="header-container">
+            <h1 style="color: #333; margin-bottom: 10px;">Carte des Sites Mégalithiques</h1>
+            <p style="color: #666; max-width: 800px; margin: 0 auto; font-size: 1.1em;">
+                Bienvenue sur la carte interactive des sites mégalithiques de la région. 
+                Utilisez les boutons en haut à droite pour filtrer les couches (Passerelles, Mottes, etc.).
+            </p>
+        </div>
+
+        <!-- La carte -->
         <div id="map">
             
         <div class="ol-viewport" style="position: relative; overflow: hidden; width: 100%; height: 100%;"><div class="ol-unselectable ol-layers" style="position: absolute; width: 100%; height: 100%; z-index: 0;"><div class="ol-layer" style="position: absolute; width: 100%; height: 100%;"><canvas width="1843" height="1167" style="position: absolute; left: 0px; transform-origin: left top; transform: matrix(0.666667, 0, 0, 0.666667, 0.166667, 0);"></canvas></div></div><div class="ol-overlaycontainer" style="position: absolute; z-index: 0; width: 100%; height: 100%; pointer-events: none;"></div><div class="ol-overlaycontainer-stopevent" style="position: absolute; z-index: 0; width: 100%; height: 100%; pointer-events: none;"><div class="ol-overlay-container ol-selectable" style="position: absolute; pointer-events: auto; display: none;"><div id="popup" class="ol-popup">
