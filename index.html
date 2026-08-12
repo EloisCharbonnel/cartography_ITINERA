@@ -93,5 +93,27 @@
         <script src="./index_files/Autolinker.min.js"></script>
         <script src="./index_files/qgis2web.js"></script>
     
-
+<!-- Script de correction de taille -->
+        <script>
+            window.addEventListener('load', function() {
+                // Force le redimensionnement de la carte une fois la page chargée
+                setTimeout(function() {
+                    var map = document.getElementById('map');
+                    // Si la carte a bien été créée, on déclenche un redimensionnement
+                    if (map && map.__ol_map) {
+                        map.__ol_map.updateSize();
+                    }
+                }, 100); // Petit délai pour laisser le temps au CSS de s'appliquer
+            });
+            
+            // Gestion du redimensionnement de la fenêtre
+            window.addEventListener('resize', function() {
+                setTimeout(function() {
+                    var map = document.getElementById('map');
+                    if (map && map.__ol_map) {
+                        map.__ol_map.updateSize();
+                    }
+                }, 100);
+            });
+        </script>
 </body></html>
